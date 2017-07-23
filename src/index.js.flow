@@ -1,0 +1,16 @@
+/* @flow */
+/* eslint-disable no-unused-vars */
+
+declare function httpHandler(
+	store: Object,
+	storePath?: string|Array<string>
+) : (req: Object, res: Object) => any;
+
+declare var NukleinServer: {
+	httpHandler: httpHandler;
+};
+
+module.exports = {
+	default: () => NukleinServer,
+	httpHandler,
+};
